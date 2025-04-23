@@ -85,7 +85,7 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 128
-  isOnKnockback: 0
+  isOnKnockback: 1
   knockbackPower: 0.1
   knockbackTime: 0.5
   projectileSpawnPosition: {fileID: 865719614501605990}
@@ -95,7 +95,7 @@ MonoBehaviour:
   spread: 1
   numberofProjectilesPerShot: 3
   multipleProjectilesAngel: 3
-  projectileColor: {r: 1, g: 1, b: 1, a: 1}
+  projectileColor: {r: 1, g: 0.4575472, b: 0.4575472, a: 1}
 --- !u!1 &4355951097247247441
 GameObject:
   m_ObjectHideFlags: 0
