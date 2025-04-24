@@ -49,7 +49,7 @@ MonoBehaviour:
   weaponSize: 0.8
   power: 1
   speed: 10
-  attackRange: 10
+  attackRange: 1
   target:
     serializedVersion: 2
     m_Bits: 64
