@@ -103,11 +103,12 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void OnEnemyDeath(EnemyController enemy)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        activeEnemies.Remove(enemy);
+        if(activeEnemies.Count == 0)
         {
-            StartWave(1);
+            gameManager.EndOfWave();
         }
     }
 }

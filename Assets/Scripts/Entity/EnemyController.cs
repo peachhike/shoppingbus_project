@@ -59,6 +59,7 @@ public class EnemyController : BaseController
     public override void Death()
     {
         base.Death();
+        enemyManager.OnEnemyDeath(this);
     }
     
     protected Vector2 DirectionToTarget()
