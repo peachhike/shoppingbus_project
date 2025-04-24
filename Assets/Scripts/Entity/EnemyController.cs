@@ -56,6 +56,11 @@ public class EnemyController : BaseController
 
     }
 
+    public override void Death()
+    {
+        base.Death();
+    }
+    
     protected Vector2 DirectionToTarget()
     {
         return (target.position - transform.position).normalized;

@@ -15,6 +15,12 @@ public class PlayerController : BaseController
         camera = Camera.main;
     }
 
+    public override void Death()
+    {
+        base.Death();
+        gameManager.GameOver(); // 게임 오버 처리
+    }
+    
     protected override void HandleAction()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");

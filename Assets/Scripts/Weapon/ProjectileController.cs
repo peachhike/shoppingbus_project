@@ -50,6 +50,23 @@ public class ProjectileController : MonoBehaviour
         }
         else if(rangeWeaponHandler.target.value == (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
         {
+            // 데미지 적용을 위해 체력 시스템이 있는지 확인
+            ResourceController resourceController = collision.GetComponent<ResourceController>();
+            if(resourceController != null)
+            {
+                // 데미지 적용
+                resourceController.ChangeHealth(-rangeWeaponHandler.Power);
+            
+                // 넉백 설정이 되어 있다면 넉백도 적용
+                if(rangeWeaponHandler.IsOnKnockback)
+                {
+                    BaseController controller = collision.GetComponent<BaseController>();
+                    if(controller != null)
+                    {
+                        controller.ApplyKnockback(transform, rangeWeaponHandler.KnockbackPower, rangeWeaponHandler.KnockbackTime);
+                    }
+                }
+            }
             DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestory);
         }
     }
