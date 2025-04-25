@@ -2,19 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
-{
-using UnityEngine;
-
 public class SoundSource : MonoBehaviour
 {
     private AudioSource _audioSource;
 
     public void Play(AudioClip clip, float soundEffectVolume, float soundEffectPitchVariance)
     {
-        if (_audioSource == null)
+        if(_audioSource == null)
             _audioSource = GetComponent<AudioSource>();
-
+        
         CancelInvoke();
         _audioSource.clip = clip;
         _audioSource.volume = soundEffectVolume;
@@ -26,7 +22,7 @@ public class SoundSource : MonoBehaviour
 
     public void Disable()
     {
-        _audioSource.Stop();
+        _audioSource?.Stop();
         Destroy(this.gameObject);
     }
 }
